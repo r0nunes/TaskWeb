@@ -1,4 +1,3 @@
 language: ruby
 rvm:
- - 2.1.7p400
-os: osx
+ - 2.2
