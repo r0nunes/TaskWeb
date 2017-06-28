@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-ruby '2.4.1'
+ruby '2.1.7'
 
 gem "cucumber"
 gem "capybara"
