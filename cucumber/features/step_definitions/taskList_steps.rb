@@ -36,7 +36,7 @@ And(/^I click in delete task$/) do
 end 
 
 Then(/^my task will be successfully deleted$/) do 
-    assert has_no_field?('Aprendendo Capybara')
+    page.has_no_field?('Aprendendo Capybara')
 end 
 
 
