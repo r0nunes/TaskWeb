@@ -35,7 +35,7 @@ And(/^I click in delete task$/) do
     click_on "task_del_row_"
 end 
 
-And(/^my task will be successfully deleted$/) do 
+Then(/^my task will be successfully deleted$/) do 
     assert has_no_field?('Aprendendo Capybara')
 end 
 
