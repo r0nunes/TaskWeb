@@ -1,43 +1,45 @@
+HomePage = Home_Page.new
+PageTaskManager = Task_Manager.new
+
 Given(/^I access the Task Manager site$/) do
-    visit "http://nameless-brushlands-59783.herokuapp.com/"  
+    HomePage.load
+    HomePage.wait_until_menu_Task_Manager_visible
+    HomePage.wait_until_menu_Pantry_Manager_visible
 end
 
+
 When(/^click in Task Manager$/) do
-    link = page.find(:css, 'a[href="taskmanager.html"]').click
+    HomePage.menu_Task_Manager.click
 end
 
 And(/^I fill in the field$/) do
-    fill_in "task-inpt", with: "Aprendendo Capybara"
+    PageTaskManager.fill_in_newTask.set "Aprendendo Capybara"
 end
 
 And(/^click in Add Task$/) do
-    click_on "add-btn"
+    PageTaskManager.add_new_task.click
 end
 
 Then(/^my task will be successfully actived$/) do
-  page.has_content?("Aprendendo Capybara")
-  page.find(:xpath,"//div[1]/ul/p/button[2]")
+    expect(PageTaskManager.validate_description_task).to have_content("Aprendendo Capybara")
 end
 
 And(/^I click in complete task$/) do
-    page.find(:xpath,"//div[1]/ul/p/button[2]").click
+    PageTaskManager.button_complete_task.click
 end
 
 Then(/^verify status task$/) do
-    page.find(:xpath,"//div/ul/p/button[1]")
+    expect(PageTaskManager).to have_button_finish_task
 end 
 
 And(/^I click in active task$/) do 
-    page.find(:xpath,"//div/ul/p/button[1]").click
+    PageTaskManager.button_finish_task.click
 end 
 
 And(/^I click in delete task$/) do 
-    click_on "task_del_row_"
+    PageTaskManager.button_delete_task.click
 end 
 
 Then(/^my task will be successfully deleted$/) do 
-    page.has_no_field?('Aprendendo Capybara')
+    PageTaskManager.validate_description_task.has_no_field?('Aprendendo Capybara')
 end 
-
-
-
