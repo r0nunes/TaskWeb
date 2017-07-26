@@ -41,5 +41,6 @@ And(/^I click in delete task$/) do
 end 
 
 Then(/^my task will be successfully deleted$/) do 
+    sleep(2)
     PageTaskManager.validate_description_task.has_no_field?("Aprendendo Capybara")
 end 
