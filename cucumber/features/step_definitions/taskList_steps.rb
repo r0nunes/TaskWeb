@@ -41,7 +41,5 @@ And(/^I click in delete task$/) do
 end 
 
 Then(/^my task will be successfully deleted$/) do 
-    sleep(2)
-    expect(PageTaskManager.validate_description_task).to have_no_content("Aprendendo Capybara")
-    #PageTaskManager.validate_description_task.has_no_field?("Aprendendo Capybara")
+    PageTaskManager.wait_until_validate_description_task_invisible
 end 
