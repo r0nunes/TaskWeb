@@ -45,6 +45,7 @@ GEM
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
+    require_all (1.4.0)
     rubyzip (1.2.1)
     selenium-webdriver (3.4.4)
       childprocess (~> 0.5)
@@ -59,14 +60,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
+  capybara (= 2.14.4)
   chromedriver-helper
-  cucumber
+  cucumber (= 2.4.0)
+  require_all
   selenium-webdriver
-  site_prism
+  site_prism (= 2.9)
 
 RUBY VERSION
    ruby 2.2.2p95
 
 BUNDLED WITH
-   1.15.1
+   1.15.2
