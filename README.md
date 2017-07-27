@@ -3,7 +3,9 @@
 ![Build Status](https://app.codeship.com/projects/3919d830-3cb9-0135-2c14-66169c51dd79/status?branch=master)
 
 ## TaskList Automation
-My first test automation in Ruby with framworks Capybara and Cucumber. This first version test, in other moment will apply PageObects witch Siteprism
+This is my first automation with Ruby. For BDD, I used Cucumber, for interation UI Capybara and for PageObject I used SitePrism.
+
+For integration continuous, I used Codeship (https://app.codeship.com/projects/228990) 
 
 ## How to use
 
