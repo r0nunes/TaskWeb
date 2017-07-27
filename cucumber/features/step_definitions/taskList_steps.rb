@@ -21,7 +21,7 @@ And(/^click in Add Task$/) do
 end
 
 Then(/^my task will be successfully actived$/) do
-    expect(PageTaskManager.validate_description_task).to have_content("Aprendendo Capybara")
+    expect(page).to have_content 'Aprendendo Capybara'
 end
 
 And(/^I click in complete task$/) do
